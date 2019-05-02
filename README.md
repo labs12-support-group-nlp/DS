@@ -2,9 +2,9 @@
 
 **Contributors**
 
-- Valerie Ogonor [GitHub](https://github.com/valogonor)
-- Rick Clayton [GitHub](https://github.com/rick1270)
-- Zarrina Niyazova [GitHub](https://github.com/zarrinan)
+- Valerie Ogonor (github.com/valogonor)
+- Rick Clayton (github.com/rick1270)
+- Zarrina https://github.com/zarrinan
 
 https://trello.com/b/dYqi3o15/labs12-support-group-nlp
 
