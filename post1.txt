@@ -1,0 +1,1495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html dir="ltr" version="XHTML+RDFa 1.0" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+<meta charset="utf-8"/><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.supportgroups.com/sites/all/themes/skeletonsub/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="It happened again I went back in time because of my friends" name="description"/>
+<meta content="Drupal 7 (http://drupal.org)" name="generator"/>
+<link href="https://www.supportgroups.com/ptsd/it-happened-again-i-went-back-in-time-because-of-my-friends" rel="canonical"/>
+<link href="https://www.supportgroups.com/node/160394" rel="shortlink"/>
+<title>It happened again I went back in time because of my friends | Support Groups</title>
+<link href="https://www.supportgroups.com/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.supportgroups.com/sites/default/files/css/css_VnlvZfjkM6LpJQZFF9vNRY-TwDFQycLChm9Jm46x9nk.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.supportgroups.com/sites/default/files/css/css_DtdHZLAQ0C5I4xsSPEOTD3sCpdimaN_g1JJrSmRiaCI.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.supportgroups.com/sites/default/files/css/css_APH7Vs8-zwrkp4aF2no8hUaTM89rQpX1VVZy23gqZ38.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700|Maven+Pro:400,700" id="eq-fonts-css" media="all" rel="stylesheet" type="text/css"/>
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-160394 node-type-group-post og-context og-context-node og-context-node-29198 disable-group-selection">
+<div id="skip-link">
+<a class="element-invisible element-focusable" href="#main-content">Skip to main content</a>
+</div>
+<div id="wrap">
+<div class="sixteen columns clearfix" id="header">
+<div class="inner">
+<a class="homelink" href="https://www.supportgroups.com"><span class="logo"></span></a>
+<div id="navigation">
+<div class="menu-header">
+<div class="region region-header">
+<div class="block block-nice-menus" id="block-nice-menus-1">
+<div class="content">
+<ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-1"><li class="menu-377 menu-path-sonlinesupportgroupscom first odd "><a href="https://online.supportgroups.com">Groups</a></li>
+<li class="menu-4858 menu-path-support-groups-support-someone even "><a href="/support-groups/support-someone">Support Someone</a></li>
+<li class="menu-12687 menu-path-blog odd "><a href="/blog">Blog</a></li>
+<li class="menu-12658 menu-path-node-553335 even last"><a href="/pages/resources">Resources</a></li>
+</ul>
+</div>
+</div>
+<div class="block block-block" id="block-block-137">
+<div class="content">
+<span class="joinnowbutton" style="margin-right:30px;"><a class="button blue" href="/welcome">Join Now</a></span> <span style="color:#fff; font-size: 15px; font-weight: bold; vertical-align: middle;">Looking for addiction support? Call <a href="tel:180004592296" style="color:#365a8c">1-800-459-2296</a> </span></div>
+</div>
+<div class="block block-user" id="block-user-login">
+<div class="content">
+<form accept-charset="UTF-8" action="/ptsd/it-happened-again-i-went-back-in-time-because-of-my-friends?destination=node/160394" id="user-login-form" method="post"><div><div class="form-item form-type-textfield form-item-name">
+<label for="edit-name"> <span class="form-required" title="This field is required.">*</span></label>
+<input class="form-text required" id="edit-name" maxlength="60" name="name" placeholder="Username" size="15" type="text" value=""/>
+</div>
+<div class="form-item form-type-password form-item-pass">
+<label for="edit-pass"> <span class="form-required" title="This field is required.">*</span></label>
+<input class="form-text required" id="edit-pass" maxlength="128" name="pass" placeholder="Password" size="15" type="password"/>
+</div>
+<div class="item-list"><ul><li class="first"><a href="/user/register" title="Create a new user account.">Create new account</a></li>
+<li class="last"><a href="/user/password" title="Request new password via e-mail.">Request new password</a></li>
+</ul></div><input name="form_build_id" type="hidden" value="form-O0u7lFHaiQCvFkwAsxAXm2J3pYdJ62iY5aQOflCwUlg"/>
+<input name="form_id" type="hidden" value="user_login_block"/>
+<div class="form-actions form-wrapper" id="edit-actions"><input class="form-submit" id="edit-submit" name="op" type="submit" value="Login"/></div><span class="login-close" id="login-close">X</span></div></form> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="container">
+<div class="ten columns" id="content">
+<div id="main">
+<div class="clearfix" id="highlighted">
+<div class="region region-highlighted">
+<div class="block block-block activity-item-wrapper activity-item-userinfo" id="block-block-167">
+<div class="content">
+<p>Newest Blog is out, Learning to be OKAY with Uncertainty!!!<br/>
+Make sure to click READ MORE to see the full article. -SG<br/>
+<a href="https://www.supportgroups.com/blog/learning-to-be-okay-with-uncertainty">https://www.supportgroups.com/blog/learning-to-be-okay-with-uncertainty</a> or click BLOG on GREEN menu bar</p>
+</div>
+</div>
+</div>
+</div>
+<h1 class="title" id="page-title">It happened again I went back in time because of my friends </h1>
+<div class="region region-content">
+<div class="block block-system" id="block-system-main">
+<div class="content">
+<div class="node node-group-post node-promoted clearfix" id="node-160394">
+<div class="content">
+<div class="activity-item-wrapper" id="activity-item-160394" nid="160394">
+<div class="activity-item-options" id="activity-item-options-160394">
+<span class="activity-item-options-flag" id="activity-item-options-flag-160394" title="Flag this post"></span>
+</div>
+<div class="activity-item-userinfo">
+<img src="https://www.supportgroups.com/sites/all/themes/skeletonsub/images/plus-SG-50.png"/> <h5>
+<span class="user-profile-container" id="user-profile-container-160394" nid="160394">
+<a class="username" href="https://www.supportgroups.com/users/littlelisa" onclick="return false;">Littlelisa </a>
+<span class="user-profile-mini-block" id="user-profile-mini-block-160394">
+<span class="mini-profile-image"><img src="https://www.supportgroups.com/sites/all/themes/skeletonsub/images/plus-SG-75.png"/></span>
+<a href="https://www.supportgroups.com/users/littlelisa" onclick="return false;"><span class="mini-profile-name">Littlelisa</span></a>
+<span class="mini-points">[5680]</span>
+<span class="user-badges"><div class="profilebadges">
+<div class="user_badges">
+<a class="green-badge" href="/support-points">•</a><a class="yellow-badge" href="/support-points">•</a><a class="blue-badge" href="/support-points">•</a><a class="orange-badge" href="/support-points">•</a> </div>
+</div>
+</span>
+<span class="mini-profile-bio">On this site looking for friends that understand what we all deal with. Live in New York in a partne…</span>
+<span class="mini-profile-relationship"></span>
+</span>
+</span>
+<span class="userpoints-container" id="userpoints-container-160394" nid="160394">
+[5680]
+</span>
+</h5>
+<div class="when-where">
+<a href="https://www.supportgroups.com/ptsd/it-happened-again-i-went-back-in-time-because-of-my-friends">May 16, 2014</a><span class="in-group"> in <a href="https://ptsd.supportgroups.com">PTSD</a></span></div>
+</div>
+<div class="activity-item-body" id="activity-item-body-160394">
+<span class="activity-item-body-text normaltextlength" id="activity-item-body-text-160394">
+<p>It happened again I went back in time because of my friends words that came out of his mouth. We were watching something about a woman hitting a guy these women complain hitting guys what do they expect if guys hold off and hit them. I asked him a question fast and is it right A man hits a woman for no reason? Here u ask that question I dont want to start of fight. I was abusedmy men and even my partner has hurt me physically and still at times emotionally. I let him but I am getting better realizing it. Thats a big step. I bined with food last night but Knowing its because of My PTSD its effected me. Today will be a better day follow up with a Doc recovering froma Kidney infection. Wish me luck.</p>
+</span>
+</div>
+<span class="comment-postbutton" id="comment-postbutton-160394" nid="160394">
+Comment
+</span>
+<div class="activity-item-info" id="activity-item-info-160394">
+<span class="activity-item-info-hearts hearts" id="activity-item-info-hearts-160394" title="Empathize"></span>
+<span class="activity-item-info-comments comments" id="activity-item-info-comments160394" title="Number of comments"> 3</span>
+</div>
+<div class="activity-item-comments comment-closed" id="activity-item-comments-160394">
+<div class="activity-item-comments-wrapper">
+<div class="activity-item-comments"><div cid="681907" class="activity-item-comment-wrapper reply-to-a-discussion" id="activity-item-comment-681907" pid="681907" time="1400284663">
+<div class="comment-options" id="comment-options-681907">
+<span class="activity-item-options-comment-flag" id="activity-item-options-comment-flag-160394" title="Flag this post"></span>
+</div>
+<div class="activity-item-comment-userinfo">
+<img src="https://www.supportgroups.com/sites/all/themes/skeletonsub/images/plus-SG-50.png"/> <h5>
+<span cid="681907" class="user-profile-container-comment" id="user-profile-container-comment-681907">
+<a class="username" href="https://www.supportgroups.com/users/captain" onclick="return false;">captain </a>
+<span class="user-profile-mini-block-comment" id="user-profile-mini-block-comment-681907">
+<span class="mini-profile-image"><img src="https://www.supportgroups.com/sites/all/themes/skeletonsub/images/plus-SG-75.png"/></span>
+<a href="https://www.supportgroups.com/users/captain" onclick="return false;"><span class="mini-profile-name">captain</span></a>
+<span class="mini-points">[290]</span>
+<span class="user-badges"><div class="profilebadges">
+<div class="user_badges">
+<a class="green-badge" href="/support-points">•</a><a class="yellow-badge" href="/support-points">•</a> </div>
+</div>
+</span>
+<span class="mini-profile-bio">…</span>
+<span class="mini-profile-relationship"></span>
+</span>
+</span>
+<span cid="681907" class="userpoints-container-comment" id="userpoints-container-comment-681907">
+[290]
+</span>
+</h5>
+<span>May 16, 2014 </span>
+</div>
+<div class="activity-item-comment-body normaltextlength" id="activity-item-comment-body-681907">
+<p>Good luck!!!</p> </div>
+<div class="activity-item-comment-info" id="activity-item-comment-info-681907">
+<span class="activity-item-comment-info-hearts hearts" id="activity-item-comment-info-hearts-681907"></span>
+<span class="activity-item-comment-info-comments comments" id="activity-item-comment-info-comments-681907"></span>
+</div>
+<div class="comment-form-field">
+<span cid="681907" class="comment-form-reply-button" id="comment-form-reply-button-681907" nid="160394" pid="681907" username="captain">Reply</span>
+<div class="comment-form-container" id="comment-form-container-681907">
+</div>
+</div>
+<div class="clear-block clearfix"></div>
+</div><div cid="681988" class="activity-item-comment-wrapper reply-to-a-discussion" id="activity-item-comment-681988" pid="681988" time="1400289413">
+<div class="comment-options" id="comment-options-681988">
+<span class="activity-item-options-comment-flag" id="activity-item-options-comment-flag-160394" title="Flag this post"></span>
+</div>
+<div class="activity-item-comment-userinfo">
+<img alt="Spacergirl's picture" height="50" src="https://www.supportgroups.com/sites/default/files/styles/50x50/public/pictures/picture-145292-1461114888.jpg?itok=vuP9iWzM" title="Spacergirl's picture" width="50"/> <h5>
+<span cid="681988" class="user-profile-container-comment" id="user-profile-container-comment-681988">
+<a class="username" href="https://www.supportgroups.com/users/spacergirl" onclick="return false;">Spacergirl </a>
+<span class="user-profile-mini-block-comment" id="user-profile-mini-block-comment-681988">
+<span class="mini-profile-image"><img alt="Spacergirl's picture" height="75" src="https://www.supportgroups.com/sites/default/files/styles/75x75/public/pictures/picture-145292-1461114888.jpg?itok=eqoprExV" title="Spacergirl's picture" width="75"/></span>
+<a href="https://www.supportgroups.com/users/spacergirl" onclick="return false;"><span class="mini-profile-name">Spacergirl</span></a>
+<span class="mini-points">[61925]</span>
+<span class="user-badges"><div class="profilebadges">
+<div class="user_badges">
+<a class="green-badge" href="/support-points">•</a><a class="yellow-badge" href="/support-points">•</a><a class="blue-badge" href="/support-points">•</a><a class="orange-badge" href="/support-points">•</a><a class="black-badge" href="/support-points">•</a> </div>
+</div>
+</span>
+<span class="mini-profile-bio">I'm crazy. I'm looney. I will always be crazy and looney. I've accepted that. I have had lots of t…</span>
+<span class="mini-profile-relationship"></span>
+</span>
+</span>
+<span cid="681988" class="userpoints-container-comment" id="userpoints-container-comment-681988">
+[61925]
+</span>
+</h5>
+<span>May 16, 2014 </span>
+</div>
+<div class="activity-item-comment-body normaltextlength" id="activity-item-comment-body-681988">
+<p>You're going to be fine!</p> </div>
+<div class="activity-item-comment-info" id="activity-item-comment-info-681988">
+<span class="activity-item-comment-info-hearts hearts" id="activity-item-comment-info-hearts-681988"></span>
+<span class="activity-item-comment-info-comments comments" id="activity-item-comment-info-comments-681988"></span>
+</div>
+<div class="comment-form-field">
+<span cid="681988" class="comment-form-reply-button" id="comment-form-reply-button-681988" nid="160394" pid="681988" username="Spacergirl">Reply</span>
+<div class="comment-form-container" id="comment-form-container-681988">
+</div>
+</div>
+<div class="clear-block clearfix"></div>
+</div><div cid="682021" class="activity-item-comment-wrapper reply-to-a-discussion" id="activity-item-comment-682021" pid="682021" time="1400291432">
+<div class="comment-options" id="comment-options-682021">
+<span class="activity-item-options-comment-flag" id="activity-item-options-comment-flag-160394" title="Flag this post"></span>
+</div>
+<div class="activity-item-comment-userinfo">
+<img alt="andine's picture" height="50" src="https://www.supportgroups.com/sites/default/files/styles/50x50/public/pictures/picture-46846.jpg?itok=i9WaQ60Q" title="andine's picture" width="50"/> <h5>
+<span cid="682021" class="user-profile-container-comment" id="user-profile-container-comment-682021">
+<a class="username" href="https://www.supportgroups.com/users/andine" onclick="return false;">andine </a>
+<span class="user-profile-mini-block-comment" id="user-profile-mini-block-comment-682021">
+<span class="mini-profile-image"><img alt="andine's picture" height="75" src="https://www.supportgroups.com/sites/default/files/styles/75x75/public/pictures/picture-46846.jpg?itok=zmbI4ueB" title="andine's picture" width="75"/></span>
+<a href="https://www.supportgroups.com/users/andine" onclick="return false;"><span class="mini-profile-name">andine</span></a>
+<span class="mini-points">[51405]</span>
+<span class="user-badges"><div class="profilebadges">
+<div class="user_badges">
+<a class="green-badge" href="/support-points">•</a><a class="yellow-badge" href="/support-points">•</a><a class="blue-badge" href="/support-points">•</a><a class="orange-badge" href="/support-points">•</a><a class="black-badge" href="/support-points">•</a> </div>
+</div>
+</span>
+<span class="mini-profile-bio">…</span>
+<span class="mini-profile-relationship"></span>
+</span>
+</span>
+<span cid="682021" class="userpoints-container-comment" id="userpoints-container-comment-682021">
+[51405]
+</span>
+</h5>
+<span>May 16, 2014 </span>
+</div>
+<div class="activity-item-comment-body normaltextlength" id="activity-item-comment-body-682021">
+<p>"and even my partner has hurt me physically and still at times emotionally. I let him but I am getting better realizing it. Thats a big step"</p>
+<p>You're right, it's a big step to realize it and an even bigger step to say it out loud. No one EVER has the right to abuse you physically, verbally, emotionally. </p>
+<p>Hope you have a therapist, abuse counselor to talk about this with. If you feel your present relationship is abusive, I hope you can reach out to a local agency and plan a better living situation. NO ONE should have to live w/ abuse. If you do need to talk w/ someone about it, don't tell your partner, in case it would make his behavior escalate.</p> </div>
+<div class="activity-item-comment-info" id="activity-item-comment-info-682021">
+<span class="activity-item-comment-info-hearts hearts" id="activity-item-comment-info-hearts-682021"></span>
+<span class="activity-item-comment-info-comments comments" id="activity-item-comment-info-comments-682021"></span>
+</div>
+<div class="comment-form-field">
+<span cid="682021" class="comment-form-reply-button" id="comment-form-reply-button-682021" nid="160394" pid="682021" username="andine">Reply</span>
+<div class="comment-form-container" id="comment-form-container-682021">
+</div>
+</div>
+<div class="clear-block clearfix"></div>
+</div></div>
+</div> </div>
+<div class="comment-form" id="comment-form-160394" nid="160394">
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+</div>
+<div class="region region-content-bottom">
+<div class="block block-block" id="block-block-166">
+<div class="content">
+<div class="cdn-eq-add2">
+<div id="add-cta2">
+<a class="clearfix cta-flexible" href="https://www.addictions.com/lp/seeking-help-for-myself/" id="add-cta2-link" target="_blank">
+<span class="title" id="add-cta2-title">Family is Forever.</span>
+<span class="sub-title" id="add-cta2-subtitle">Get Help for Your Loved One.</span>
+<em id="add-cta2-em">
+<b id="add-cta2-em-b">Call The 24Hr Addiction Hotline</b>
+<strong id="add-cta2-phone">800-454-6704</strong>
+</em>
+<img alt="" id="add-cta2-logo" src="//cdn.rehabmedianetwork.com/indon/imgs/add-logo-white.png"/>
+</a>
+</div>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:400,700');
+  /* ADD BANNER #2 */
+  .cdn-eq-add2 { width:100%; min-width: 250px; display:block; animation: 2.5s fadeIn; animation-fill-mode: forwards; }
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  #add-cta2 { width: 100%;  display: block; margin: 0 auto 30px; }
+  #add-cta2-link { display: table; width: 100%; clear: both; color: #fff; line-height: 1; text-align: center; text-decoration: none !important; text-shadow: 0 1px 1px rgba(0,0,0,.2); margin: 0 auto 30px; background-color: #42667c; background-image: url(//cdn.rehabmedianetwork.com/indon/imgs/add-bg-cta2.jpg); background-position: center center; background-size: cover; background-repeat: no-repeat; }
+  #add-cta2-title { display: block; font-family: "Montserrat", sans-serif; font-weight: bold; font-size: 27px; padding: 20px 0 8px; color: #fff; }
+  #add-cta2-subtitle { display: block; line-height: 1.2; font-size: 17px; padding: 0 0 19px; font-family: "Open Sans", sans-serif; }
+  #add-cta2-em { display: block; margin: 0 0 15px; padding: 9px 0 7px; background: #20b15c; font-style: normal; font-family: "Montserrat", sans-serif; transition: background .2s; text-transform: uppercase; }
+  #add-cta2-em-b { display: block; padding: 0 0 2px; font-size: 13px; font-weight: normal; }
+  #add-cta2-phone { display: block; font-size: 30px; }
+  img#add-cta2-logo { display: block; width: 210px; margin: 0 auto 15px; background-color: transparent !important; background:none; border: none !important; box-shadow: none !important; }
+  #add-cta2-link:hover #add-cta2-em, #add-cta2-link:focus #add-cta2-em { background: #99cc00; }
+</style>
+<script type="text/eqcss">
+@element .cdn-eq-add2 and (min-width: 540px) {
+    .cdn-eq-add2 #add-cta2-link { width: 100%; height: 110px; position: relative; background-image: url(//cdn.rehabmedianetwork.com/indon/imgs/add-bg-cta2-large.jpg); background-position: left center; }
+    .cdn-eq-add2 #add-cta2-title { width:25%; float:left; text-align:left; padding-left:10px; position:relative; bottom:-25px; }
+    .cdn-eq-add2 #add-cta2-subtitle { float:left; width: 48%; max-width:320px; font-size:18px; margin-top:10px; padding-bottom:5px; }
+    .cdn-eq-add2 #add-cta2-em { float:left; width: 48%; max-width:330px; }
+    .cdn-eq-add2 img#add-cta2-logo { width:20%; float:right; margin-right:10px; margin-bottom:0; position:relative; bottom:-15px; background-color: transparent !important; background:none; border: none !important; box-shadow: none !important; }        
+  }
+  @element .cdn-eq-add2 and (min-width: 640px) {
+    .cdn-eq-add2 #add-cta2-title { bottom:-20px; font-size:32px; }
+    .cdn-eq-add2 #add-cta2-subtitle { font-size:21px; }
+    .cdn-eq-add2 img#add-cta2-logo { bottom:-10px; }
+  }
+  @element .cdn-eq-add2 and (min-width: 670px) {
+    .cdn-eq-add2 #add-cta2-title { bottom:-15px; font-size:35px; width:27%; }
+    .cdn-eq-add2 #add-cta2-subtitle { font-size:23px; }
+    .cdn-eq-add2 img#add-cta2-logo { bottom:0; }
+  }
+  @element .cdn-eq-add2 and (min-width: 715px) {
+    .cdn-eq-add2 #add-cta2-link { height:130px; bottom:-20px; }
+    .cdn-eq-add2 #add-cta2-title { padding-left:20px; }
+    .cdn-eq-add2 #add-cta2-subtitle { margin-top:15px; }
+    .cdn-eq-add2 img#add-cta2-logo { margin-right:20px; }
+  }
+  @element .cdn-eq-add2 and (min-width: 800px) {
+    .cdn-eq-add2 #add-cta2-link { max-width:880px; }
+    .cdn-eq-add2 #add-cta2-title { font-size:42px; bottom:-10px; }
+    .cdn-eq-add2 img#add-cta2-logo { bottom:20px; width:25%; }
+  } 
+  @element .cdn-eq-add2 and (min-width: 880px) { 
+    .cdn-eq-add2 #add-cta2-title { width:30%; }
+  } 
+</script> </div> </div>
+</div>
+</div>
+</div>
+</div>
+<div class="six columns" id="sidebar-first">
+<div class="region region-sidebar-first">
+<div class="block block-block" id="block-block-79">
+<h2>Top Support Groups</h2>
+<div class="content">
+<ul class="topgroups">
+<li><a href="http://depression.supportgroups.com">Depression</a></li>
+<li><a href="http://anxiety.supportgroups.com">Anxiety</a></li>
+<li><a href="http://relationship.supportgroups.com">Relationship</a></li>
+<li><a href="http://non-hodgkins-lymphoma.supportgroups.com/">NHL</a></li>
+<li><a href="http://loneliness.supportgroups.com/">Loneliness</a></li>
+<li><a href="http://herpes.supportgroups.com/">Herpes</a></li>
+<li><a href="http://self-esteem.supportgroups.com/">Self Esteem</a></li>
+<li><a href="http://divorce.supportgroups.com/">Divorce</a></li>
+<li><a href="http://stress.supportgroups.com/">Stress</a></li>
+<li><a href="http://eating-disorder.supportgroups.com/">Eating Disorder</a> </li>
+<li><a href="http://self-injury.supportgroups.com/">Self Harm</a></li>
+<li><a href="http://abuse.supportgroups.com/">Abuse</a></li>
+<li><a href="http://alcohol.supportgroups.com/">Alcohol</a></li>
+<li><a href="http://ptsd.supportgroups.com/">PTSD</a></li>
+<li><a href="http://bipolar.supportgroups.com/">Bipolar</a></li>
+<li><a href="http://borderline-personality-disorder.supportgroups.com/">BPD</a></li>
+<li><a href="http://binge-eating.supportgroups.com/">Binge Eating</a></li>
+<li><a href="http://infidelity.supportgroups.com/">Infidelity</a></li>
+<li><a href="http://bulimia.supportgroups.com/">Bulimia</a></li>
+<li><a href="http://anorexia.supportgroups.com/">Anorexia</a></li>
+</ul> </div>
+</div>
+<div class="block block-views" id="block-views-most-commented-clone-block">
+<h2>Most Discussed</h2>
+<div class="content">
+<div class="view view-most-commented-clone view-id-most_commented_clone view-display-id-block view-dom-id-f6ae464cab594b220868ee82bde4c0f0">
+<div class="view-content">
+<div class="most-commented"> <ol class="circled"> <li class="">
+<div class="views-field views-field-title"> <span class="field-content"><a href="https://www.supportgroups.com/narcissist/hie-i-am-new-and-desperately-seeking-help-unfortunately-i">Hie, I am new and desperately seeking help, unfortunately I </a></span> </div></li>
+<li class="">
+<div class="views-field views-field-title"> <span class="field-content"><a href="https://www.supportgroups.com/narcissist/has-anyone-ever-thought-about-or-attempted-to-get-payback">Has anyone ever thought about, or attempted to, get payback </a></span> </div></li>
+<li class="">
+<div class="views-field views-field-title"> <span class="field-content"><a href="https://www.supportgroups.com/narcissist/5-weeks-since-i-filed-but-the-war-has-started-he-now-w">5 weeks since I filed! But... the war has started. He now w</a></span> </div></li>
+<li class="">
+<div class="views-field views-field-title"> <span class="field-content"><a href="https://www.supportgroups.com/narcissist-ptsd-sexual-abuse/not-than-anyone-cares-but-i-had-a-little">Not than anyone cares, but I had a little self realization m</a></span> </div></li>
+<li class="">
+<div class="views-field views-field-title"> <span class="field-content"><a href="https://www.supportgroups.com/herpes/hello-just-checking-to-see-if-this-works">Hello just checking to see if this works.</a></span> </div></li>
+</ol></div> </div>
+</div> </div>
+</div>
+<div class="block block-block" id="block-block-139">
+<div class="content">
+<div id="social-icons">
+<div class="social-icon-link">
+<a href="https://www.facebook.com/supportgroups" target="_blank"><img alt="facebook" height="35" src="/images/logo-facebook.png" width="35"/></a>
+</div>
+<div class="social-icon-link">
+<a href="https://twitter.com/supportgroups" target="_blank"><img alt="follow supportgroups.com on twitter" height="35" src="/images/logo-twitter.png" width="35"/></a>
+</div>
+<div class="social-icon-link">
+<a href="http://www.pinterest.com/supportgroups" target="_blank"><img alt="follow supportgroups on pinterest" height="35" src="/images/logo-pinterest.png" width="35"/></a>
+</div>
+<div class="social-icon-link">
+<a href="http://instagram.com/SupportGroupsforeveryone" target="_blank"><img alt="follow supportgroups on instagram" height="35" src="/images/logo-instagram.png" width="35"/></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div id="footer">
+<div class="container">
+<div class="sixteen columns clearfix">
+<div class="one_third">
+</div>
+<div class="one_third">
+</div>
+<div class="one_third last">
+</div>
+<div class="clear"></div>
+<div class="region region-footer">
+<div class="block block-block" id="block-block-91">
+<div class="content">
+<img alt="supportgroups logo" class="footer-logo" height="50" src="/sites/all/themes/skeletonsub/images/footerplussg.png" width="50"/>
+<ul class="inline">
+<li><a href="http://www.supportgroups.com/support-groups/all-support-group-posts">All Posts</a></li>
+<li><a href="http://www.supportgroups.com/support-groups/support-someone">Support Someone</a></li>
+<li><a href="http://www.supportgroups.com/how-this-site-works">FAQ</a></li>
+<li><a href="http://www.supportgroups.com/content/about-us">About/Contact</a></li>
+<li><a href="http://www.supportgroups.com/content/legal-statement">Terms of Use</a></li>
+<li class="last"><a href="http://www.supportgroups.com/content/privacy-policy">Privacy</a></li>
+</ul>
+<p>© 2015 SupportGroups.com</p> </div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<div id="mobile-popup">
+<div id="mobile-popup-inner">
+<div class="close-button" id="close-button"></div>
+<h2>Login or Register</h2>
+<p>You are visiting <b>Support Groups</b> as an anonymous user.</p>
+<p>Please consider joining our community and gain access to additional features by</p>
+<p><a id="mobile-register" onclick="return false;">registering</a> or <a id="mobile-login" onclick="return false;">logging into your account</a></p>
+</div>
+</div>
+<style>
+
+	#mobile-popup {
+		top: 120px;
+		position: fixed;
+		z-index:2000;
+		display: none;
+		width: 100%;
+	}
+	#mobile-popup-inner {
+		max-width:550px;
+		margin:0 auto;
+		color:#666666;
+		background-color: white;
+		position: relative;
+		padding: 2em; }
+		#mobile-popup div.close-button {
+			position: absolute;
+			right: 5px;
+			top: 5px;
+			width: 20px;
+			height: 20px;
+			background-image: url(/sites/all/modules/custom/supportgroups_default/images/close.png);
+			background-position: center center;
+			background-repeat: no-repeat; }
+			#user-register-form div.close-button:hover{
+				cursor: pointer; }
+
+	#mobile-popup h2 {
+		font-size:1.7em;
+		margin-top:0; }
+	#mobile-popup-inner a {
+		text-decoration: underline;
+		font-weight: bold;}
+</style>
+<div class="region region-closure">
+<div class="block block-supportgroups-user" id="block-supportgroups-user-supportgroups-register">
+<div class="content">
+<form accept-charset="UTF-8" action="/ptsd/it-happened-again-i-went-back-in-time-because-of-my-friends" class="user-info-from-cookie" enctype="multipart/form-data" id="user-register-form" method="post"><div><div class="close-button" id="close-button"></div><div class="steps-wrapper"><div class="step step-1" id="step-1"><h2 class="register-header-popup">Welcome to SupportGroups! Join now for free.</h2><div class="register-desc">Choose Name &amp; Password</div><input name="form_build_id" type="hidden" value="form-dL9Nmvb8REgXCxCGZK9j3EBihsQ4yfam3WNOrlmOrFM"/>
+<input name="form_id" type="hidden" value="user_register_form"/>
+<input name="honeypot_time" type="hidden" value="1557271809|HGX7Hn20G1ZNhj7h0V_NP8U04IcMkLoe1LZCgpSTVm8"/>
+<input name="node_body" type="hidden" value=""/>
+<input name="node_gid" type="hidden" value=""/>
+<input name="comment_body" type="hidden" value=""/>
+<input name="comment_nid" type="hidden" value=""/>
+<input name="comment_pid" type="hidden" value=""/>
+<input name="like_value" type="hidden" value=""/>
+<input name="like_type" type="hidden" value=""/>
+<div class="form-wrapper" id="edit-account"><div class="account-fields-left-column"><div class="form-item form-type-textfield form-item-name">
+<label for="edit-name--2"> <span class="form-required" title="This field is required.">*</span></label>
+<input class="form-text required" id="edit-name--2" maxlength="60" name="name" placeholder="Username" size="60" type="text" value=""/>
+</div>
+<div class="form-item form-type-textfield form-item-mail">
+<label for="edit-mail"> <span class="form-required" title="This field is required.">*</span></label>
+<input class="form-text required" id="edit-mail" maxlength="254" name="mail" placeholder="Email" size="60" type="text" value=""/>
+</div>
+</div><div class="account-fields-right-column"><div class="form-item form-type-password-confirm form-item-pass">
+<label for="edit-pass--2"> <span class="form-required" title="This field is required.">*</span></label>
+<div class="form-item form-type-password form-item-pass-pass1">
+<label for="edit-pass-pass1">Password <span class="form-required" title="This field is required.">*</span></label>
+<input class="password-field form-text required" id="edit-pass-pass1" maxlength="128" name="pass[pass1]" size="25" type="password"/>
+</div>
+<div class="form-item form-type-password form-item-pass-pass2">
+<label for="edit-pass-pass2">Confirm password <span class="form-required" title="This field is required.">*</span></label>
+<input class="password-confirm form-text required" id="edit-pass-pass2" maxlength="128" name="pass[pass2]" size="25" type="password"/>
+</div>
+</div>
+</div></div><fieldset class="form-wrapper" id="edit-terms-of-use"><legend><span class="fieldset-legend">Terms of Use</span></legend><div class="fieldset-wrapper"><div class="form-item form-type-checkbox form-item-terms-of-use">
+<input class="form-checkbox required" id="edit-terms-of-use--2" name="terms_of_use" type="checkbox" value="1"/> <label class="option" for="edit-terms-of-use--2">I agree with the <a href="/content/legal-statement" target="_blank">Legal Statement</a><br/> and I have read the <a href="/content/privacy-policy" target="_blank">Privacy Statement</a> <span class="form-required" title="This field is required.">*</span></label>
+</div>
+</div></fieldset>
+<a class="button green" href="#" id="register-button">Register</a></div><div class="step step-2" id="step-2"><div class="register-thank-you"><span>To personalize your Support Feed and get the most out of your community, please join some Support Groups.</span>Remember: you must click "Save" to complete registration.</div><div class="select-a-group-help">Select as many as you like</div><div class="select-a-group"><div class="form-item form-type-checkboxes form-item-og-register">
+<div class="form-checkboxes" id="edit-og-register--2"><div class="form-item form-type-checkbox form-item-og-register-29164">
+<input class="form-checkbox" id="edit-og-register-29164" name="og_register[29164]" type="checkbox" value="29164"/> <label class="option" for="edit-og-register-29164"> <span class="og-registration-29164">
+ADHD </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29162">
+<input class="form-checkbox" id="edit-og-register-29162" name="og_register[29162]" type="checkbox" value="29162"/> <label class="option" for="edit-og-register-29162"> <span class="og-registration-29162">
+Abuse </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29163">
+<input class="form-checkbox" id="edit-og-register-29163" name="og_register[29163]" type="checkbox" value="29163"/> <label class="option" for="edit-og-register-29163"> <span class="og-registration-29163">
+Acne </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37215">
+<input class="form-checkbox" id="edit-og-register-37215" name="og_register[37215]" type="checkbox" value="37215"/> <label class="option" for="edit-og-register-37215"> <span class="og-registration-37215">
+Adderall </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31434">
+<input class="form-checkbox" id="edit-og-register-31434" name="og_register[31434]" type="checkbox" value="31434"/> <label class="option" for="edit-og-register-31434"> <span class="og-registration-31434">
+Adoption and Fostering </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35204">
+<input class="form-checkbox" id="edit-og-register-35204" name="og_register[35204]" type="checkbox" value="35204"/> <label class="option" for="edit-og-register-35204"> <span class="og-registration-35204">
+Agoraphobia </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29165">
+<input class="form-checkbox" id="edit-og-register-29165" name="og_register[29165]" type="checkbox" value="29165"/> <label class="option" for="edit-og-register-29165"> <span class="og-registration-29165">
+Alcohol </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31449">
+<input class="form-checkbox" id="edit-og-register-31449" name="og_register[31449]" type="checkbox" value="31449"/> <label class="option" for="edit-og-register-31449"> <span class="og-registration-31449">
+Alzheimers </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37216">
+<input class="form-checkbox" id="edit-og-register-37216" name="og_register[37216]" type="checkbox" value="37216"/> <label class="option" for="edit-og-register-37216"> <span class="og-registration-37216">
+Ambien </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-47191">
+<input class="form-checkbox" id="edit-og-register-47191" name="og_register[47191]" type="checkbox" value="47191"/> <label class="option" for="edit-og-register-47191"> <span class="og-registration-47191">
+Amputee </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37212">
+<input class="form-checkbox" id="edit-og-register-37212" name="og_register[37212]" type="checkbox" value="37212"/> <label class="option" for="edit-og-register-37212"> <span class="og-registration-37212">
+Anemia </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29166">
+<input class="form-checkbox" id="edit-og-register-29166" name="og_register[29166]" type="checkbox" value="29166"/> <label class="option" for="edit-og-register-29166"> <span class="og-registration-29166">
+Anger Management </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29167">
+<input class="form-checkbox" id="edit-og-register-29167" name="og_register[29167]" type="checkbox" value="29167"/> <label class="option" for="edit-og-register-29167"> <span class="og-registration-29167">
+Anorexia </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29168">
+<input class="form-checkbox" id="edit-og-register-29168" name="og_register[29168]" type="checkbox" value="29168"/> <label class="option" for="edit-og-register-29168"> <span class="og-registration-29168">
+Anxiety </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29918">
+<input class="form-checkbox" id="edit-og-register-29918" name="og_register[29918]" type="checkbox" value="29918"/> <label class="option" for="edit-og-register-29918"> <span class="og-registration-29918">
+Arthritis </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31429">
+<input class="form-checkbox" id="edit-og-register-31429" name="og_register[31429]" type="checkbox" value="31429"/> <label class="option" for="edit-og-register-31429"> <span class="og-registration-31429">
+Asperger Syndrome </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29909">
+<input class="form-checkbox" id="edit-og-register-29909" name="og_register[29909]" type="checkbox" value="29909"/> <label class="option" for="edit-og-register-29909"> <span class="og-registration-29909">
+Asthma </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37217">
+<input class="form-checkbox" id="edit-og-register-37217" name="og_register[37217]" type="checkbox" value="37217"/> <label class="option" for="edit-og-register-37217"> <span class="og-registration-37217">
+Ativan </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29169">
+<input class="form-checkbox" id="edit-og-register-29169" name="og_register[29169]" type="checkbox" value="29169"/> <label class="option" for="edit-og-register-29169"> <span class="og-registration-29169">
+Autism </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31426">
+<input class="form-checkbox" id="edit-og-register-31426" name="og_register[31426]" type="checkbox" value="31426"/> <label class="option" for="edit-og-register-31426"> <span class="og-registration-31426">
+Back Pain </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44611">
+<input class="form-checkbox" id="edit-og-register-44611" name="og_register[44611]" type="checkbox" value="44611"/> <label class="option" for="edit-og-register-44611"> <span class="og-registration-44611">
+Bedwetting </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29170">
+<input class="form-checkbox" id="edit-og-register-29170" name="og_register[29170]" type="checkbox" value="29170"/> <label class="option" for="edit-og-register-29170"> <span class="og-registration-29170">
+Binge Eating </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29171">
+<input class="form-checkbox" id="edit-og-register-29171" name="og_register[29171]" type="checkbox" value="29171"/> <label class="option" for="edit-og-register-29171"> <span class="og-registration-29171">
+Bipolar </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-64791">
+<input class="form-checkbox" id="edit-og-register-64791" name="og_register[64791]" type="checkbox" value="64791"/> <label class="option" for="edit-og-register-64791"> <span class="og-registration-64791">
+Birth Defects </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31427">
+<input class="form-checkbox" id="edit-og-register-31427" name="og_register[31427]" type="checkbox" value="31427"/> <label class="option" for="edit-og-register-31427"> <span class="og-registration-31427">
+Bisexuality </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35212">
+<input class="form-checkbox" id="edit-og-register-35212" name="og_register[35212]" type="checkbox" value="35212"/> <label class="option" for="edit-og-register-35212"> <span class="og-registration-35212">
+Bladder Cancer </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-40267">
+<input class="form-checkbox" id="edit-og-register-40267" name="og_register[40267]" type="checkbox" value="40267"/> <label class="option" for="edit-og-register-40267"> <span class="og-registration-40267">
+Body Dysmorphic Disorder </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35214">
+<input class="form-checkbox" id="edit-og-register-35214" name="og_register[35214]" type="checkbox" value="35214"/> <label class="option" for="edit-og-register-35214"> <span class="og-registration-35214">
+Bone Cancer </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29172">
+<input class="form-checkbox" id="edit-og-register-29172" name="og_register[29172]" type="checkbox" value="29172"/> <label class="option" for="edit-og-register-29172"> <span class="og-registration-29172">
+Borderline Personality Disorder </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35215">
+<input class="form-checkbox" id="edit-og-register-35215" name="og_register[35215]" type="checkbox" value="35215"/> <label class="option" for="edit-og-register-35215"> <span class="og-registration-35215">
+Brain Cancer </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-30721">
+<input class="form-checkbox" id="edit-og-register-30721" name="og_register[30721]" type="checkbox" value="30721"/> <label class="option" for="edit-og-register-30721"> <span class="og-registration-30721">
+Brain Injury </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29173">
+<input class="form-checkbox" id="edit-og-register-29173" name="og_register[29173]" type="checkbox" value="29173"/> <label class="option" for="edit-og-register-29173"> <span class="og-registration-29173">
+Breast Cancer </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44598">
+<input class="form-checkbox" id="edit-og-register-44598" name="og_register[44598]" type="checkbox" value="44598"/> <label class="option" for="edit-og-register-44598"> <span class="og-registration-44598">
+Breastfeeding </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29174">
+<input class="form-checkbox" id="edit-og-register-29174" name="og_register[29174]" type="checkbox" value="29174"/> <label class="option" for="edit-og-register-29174"> <span class="og-registration-29174">
+Bulimia </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31453">
+<input class="form-checkbox" id="edit-og-register-31453" name="og_register[31453]" type="checkbox" value="31453"/> <label class="option" for="edit-og-register-31453"> <span class="og-registration-31453">
+Bullying </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-45937">
+<input class="form-checkbox" id="edit-og-register-45937" name="og_register[45937]" type="checkbox" value="45937"/> <label class="option" for="edit-og-register-45937"> <span class="og-registration-45937">
+Burn </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31437">
+<input class="form-checkbox" id="edit-og-register-31437" name="og_register[31437]" type="checkbox" value="31437"/> <label class="option" for="edit-og-register-31437"> <span class="og-registration-31437">
+COPD </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35235">
+<input class="form-checkbox" id="edit-og-register-35235" name="og_register[35235]" type="checkbox" value="35235"/> <label class="option" for="edit-og-register-35235"> <span class="og-registration-35235">
+Caffeine </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44600">
+<input class="form-checkbox" id="edit-og-register-44600" name="og_register[44600]" type="checkbox" value="44600"/> <label class="option" for="edit-og-register-44600"> <span class="og-registration-44600">
+Career Changes </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44622">
+<input class="form-checkbox" id="edit-og-register-44622" name="og_register[44622]" type="checkbox" value="44622"/> <label class="option" for="edit-og-register-44622"> <span class="og-registration-44622">
+Caregivers </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44602">
+<input class="form-checkbox" id="edit-og-register-44602" name="og_register[44602]" type="checkbox" value="44602"/> <label class="option" for="edit-og-register-44602"> <span class="og-registration-44602">
+Carpal Tunnel Syndrome </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31443">
+<input class="form-checkbox" id="edit-og-register-31443" name="og_register[31443]" type="checkbox" value="31443"/> <label class="option" for="edit-og-register-31443"> <span class="og-registration-31443">
+Celiac Disease </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31445">
+<input class="form-checkbox" id="edit-og-register-31445" name="og_register[31445]" type="checkbox" value="31445"/> <label class="option" for="edit-og-register-31445"> <span class="og-registration-31445">
+Cerebral Palsy </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35216">
+<input class="form-checkbox" id="edit-og-register-35216" name="og_register[35216]" type="checkbox" value="35216"/> <label class="option" for="edit-og-register-35216"> <span class="og-registration-35216">
+Cervical Cancer </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37240">
+<input class="form-checkbox" id="edit-og-register-37240" name="og_register[37240]" type="checkbox" value="37240"/> <label class="option" for="edit-og-register-37240"> <span class="og-registration-37240">
+Chantix </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37247">
+<input class="form-checkbox" id="edit-og-register-37247" name="og_register[37247]" type="checkbox" value="37247"/> <label class="option" for="edit-og-register-37247"> <span class="og-registration-37247">
+Chemotherapy </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29911">
+<input class="form-checkbox" id="edit-og-register-29911" name="og_register[29911]" type="checkbox" value="29911"/> <label class="option" for="edit-og-register-29911"> <span class="og-registration-29911">
+Chronic Fatigue Syndrome </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29901">
+<input class="form-checkbox" id="edit-og-register-29901" name="og_register[29901]" type="checkbox" value="29901"/> <label class="option" for="edit-og-register-29901"> <span class="og-registration-29901">
+Chronic Pain </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35232">
+<input class="form-checkbox" id="edit-og-register-35232" name="og_register[35232]" type="checkbox" value="35232"/> <label class="option" for="edit-og-register-35232"> <span class="og-registration-35232">
+Cirrhosis </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35208">
+<input class="form-checkbox" id="edit-og-register-35208" name="og_register[35208]" type="checkbox" value="35208"/> <label class="option" for="edit-og-register-35208"> <span class="og-registration-35208">
+Cocaine </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29905">
+<input class="form-checkbox" id="edit-og-register-29905" name="og_register[29905]" type="checkbox" value="29905"/> <label class="option" for="edit-og-register-29905"> <span class="og-registration-29905">
+Codependency </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29175">
+<input class="form-checkbox" id="edit-og-register-29175" name="og_register[29175]" type="checkbox" value="29175"/> <label class="option" for="edit-og-register-29175"> <span class="og-registration-29175">
+College </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29926">
+<input class="form-checkbox" id="edit-og-register-29926" name="og_register[29926]" type="checkbox" value="29926"/> <label class="option" for="edit-og-register-29926"> <span class="og-registration-29926">
+Colon Cancer </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35217">
+<input class="form-checkbox" id="edit-og-register-35217" name="og_register[35217]" type="checkbox" value="35217"/> <label class="option" for="edit-og-register-35217"> <span class="og-registration-35217">
+Colorectal Cancer </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-47181">
+<input class="form-checkbox" id="edit-og-register-47181" name="og_register[47181]" type="checkbox" value="47181"/> <label class="option" for="edit-og-register-47181"> <span class="og-registration-47181">
+Coming Out </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31430">
+<input class="form-checkbox" id="edit-og-register-31430" name="og_register[31430]" type="checkbox" value="31430"/> <label class="option" for="edit-og-register-31430"> <span class="og-registration-31430">
+Crohns Disease </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37218">
+<input class="form-checkbox" id="edit-og-register-37218" name="og_register[37218]" type="checkbox" value="37218"/> <label class="option" for="edit-og-register-37218"> <span class="og-registration-37218">
+Cymbalta </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44599">
+<input class="form-checkbox" id="edit-og-register-44599" name="og_register[44599]" type="checkbox" value="44599"/> <label class="option" for="edit-og-register-44599"> <span class="og-registration-44599">
+Cystic Fibrosis </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31953">
+<input class="form-checkbox" id="edit-og-register-31953" name="og_register[31953]" type="checkbox" value="31953"/> <label class="option" for="edit-og-register-31953"> <span class="og-registration-31953">
+Dads </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44592">
+<input class="form-checkbox" id="edit-og-register-44592" name="og_register[44592]" type="checkbox" value="44592"/> <label class="option" for="edit-og-register-44592"> <span class="og-registration-44592">
+Dementia </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29176">
+<input class="form-checkbox" id="edit-og-register-29176" name="og_register[29176]" type="checkbox" value="29176"/> <label class="option" for="edit-og-register-29176"> <span class="og-registration-29176">
+Depression </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29177">
+<input class="form-checkbox" id="edit-og-register-29177" name="og_register[29177]" type="checkbox" value="29177"/> <label class="option" for="edit-og-register-29177"> <span class="og-registration-29177">
+Diabetes </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-47190">
+<input class="form-checkbox" id="edit-og-register-47190" name="og_register[47190]" type="checkbox" value="47190"/> <label class="option" for="edit-og-register-47190"> <span class="og-registration-47190">
+Diverticulitis </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29178">
+<input class="form-checkbox" id="edit-og-register-29178" name="og_register[29178]" type="checkbox" value="29178"/> <label class="option" for="edit-og-register-29178"> <span class="og-registration-29178">
+Divorce </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31452">
+<input class="form-checkbox" id="edit-og-register-31452" name="og_register[31452]" type="checkbox" value="31452"/> <label class="option" for="edit-og-register-31452"> <span class="og-registration-31452">
+Dizziness </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44604">
+<input class="form-checkbox" id="edit-og-register-44604" name="og_register[44604]" type="checkbox" value="44604"/> <label class="option" for="edit-og-register-44604"> <span class="og-registration-44604">
+Down Syndrome </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29027">
+<input class="form-checkbox" id="edit-og-register-29027" name="og_register[29027]" type="checkbox" value="29027"/> <label class="option" for="edit-og-register-29027"> <span class="og-registration-29027">
+Drug </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35231">
+<input class="form-checkbox" id="edit-og-register-35231" name="og_register[35231]" type="checkbox" value="35231"/> <label class="option" for="edit-og-register-35231"> <span class="og-registration-35231">
+Dyslexia </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-38499">
+<input class="form-checkbox" id="edit-og-register-38499" name="og_register[38499]" type="checkbox" value="38499"/> <label class="option" for="edit-og-register-38499"> <span class="og-registration-38499">
+EDNOS </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29179">
+<input class="form-checkbox" id="edit-og-register-29179" name="og_register[29179]" type="checkbox" value="29179"/> <label class="option" for="edit-og-register-29179"> <span class="og-registration-29179">
+Eating Disorder </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-43572">
+<input class="form-checkbox" id="edit-og-register-43572" name="og_register[43572]" type="checkbox" value="43572"/> <label class="option" for="edit-og-register-43572"> <span class="og-registration-43572">
+Ecstasy </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31444">
+<input class="form-checkbox" id="edit-og-register-31444" name="og_register[31444]" type="checkbox" value="31444"/> <label class="option" for="edit-og-register-31444"> <span class="og-registration-31444">
+Eczema </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35205">
+<input class="form-checkbox" id="edit-og-register-35205" name="og_register[35205]" type="checkbox" value="35205"/> <label class="option" for="edit-og-register-35205"> <span class="og-registration-35205">
+Emotional Abuse </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31428">
+<input class="form-checkbox" id="edit-og-register-31428" name="og_register[31428]" type="checkbox" value="31428"/> <label class="option" for="edit-og-register-31428"> <span class="og-registration-31428">
+Endometriosis </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29913">
+<input class="form-checkbox" id="edit-og-register-29913" name="og_register[29913]" type="checkbox" value="29913"/> <label class="option" for="edit-og-register-29913"> <span class="og-registration-29913">
+Epilepsy </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44603">
+<input class="form-checkbox" id="edit-og-register-44603" name="og_register[44603]" type="checkbox" value="44603"/> <label class="option" for="edit-og-register-44603"> <span class="og-registration-44603">
+Erectile Dysfunction </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-40263">
+<input class="form-checkbox" id="edit-og-register-40263" name="og_register[40263]" type="checkbox" value="40263"/> <label class="option" for="edit-og-register-40263"> <span class="og-registration-40263">
+Exercise Addiction </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29180">
+<input class="form-checkbox" id="edit-og-register-29180" name="og_register[29180]" type="checkbox" value="29180"/> <label class="option" for="edit-og-register-29180"> <span class="og-registration-29180">
+Family </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29181">
+<input class="form-checkbox" id="edit-og-register-29181" name="og_register[29181]" type="checkbox" value="29181"/> <label class="option" for="edit-og-register-29181"> <span class="og-registration-29181">
+Fibromyalgia </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29182">
+<input class="form-checkbox" id="edit-og-register-29182" name="og_register[29182]" type="checkbox" value="29182"/> <label class="option" for="edit-og-register-29182"> <span class="og-registration-29182">
+Financial Problems </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29183">
+<input class="form-checkbox" id="edit-og-register-29183" name="og_register[29183]" type="checkbox" value="29183"/> <label class="option" for="edit-og-register-29183"> <span class="og-registration-29183">
+Food Allergy </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29184">
+<input class="form-checkbox" id="edit-og-register-29184" name="og_register[29184]" type="checkbox" value="29184"/> <label class="option" for="edit-og-register-29184"> <span class="og-registration-29184">
+Friends and Family of Addicts </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-102839">
+<input class="form-checkbox" id="edit-og-register-102839" name="og_register[102839]" type="checkbox" value="102839"/> <label class="option" for="edit-og-register-102839"> <span class="og-registration-102839">
+Friends and Family of BPD </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-253319">
+<input class="form-checkbox" id="edit-og-register-253319" name="og_register[253319]" type="checkbox" value="253319"/> <label class="option" for="edit-og-register-253319"> <span class="og-registration-253319">
+Friends and Family of Sex Addicts </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29185">
+<input class="form-checkbox" id="edit-og-register-29185" name="og_register[29185]" type="checkbox" value="29185"/> <label class="option" for="edit-og-register-29185"> <span class="og-registration-29185">
+Gambling </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29186">
+<input class="form-checkbox" id="edit-og-register-29186" name="og_register[29186]" type="checkbox" value="29186"/> <label class="option" for="edit-og-register-29186"> <span class="og-registration-29186">
+Gay and Lesbian </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44623">
+<input class="form-checkbox" id="edit-og-register-44623" name="og_register[44623]" type="checkbox" value="44623"/> <label class="option" for="edit-og-register-44623"> <span class="og-registration-44623">
+Graves Disease </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29187">
+<input class="form-checkbox" id="edit-og-register-29187" name="og_register[29187]" type="checkbox" value="29187"/> <label class="option" for="edit-og-register-29187"> <span class="og-registration-29187">
+Grief </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29920">
+<input class="form-checkbox" id="edit-og-register-29920" name="og_register[29920]" type="checkbox" value="29920"/> <label class="option" for="edit-og-register-29920"> <span class="og-registration-29920">
+HIV </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-57785">
+<input class="form-checkbox" id="edit-og-register-57785" name="og_register[57785]" type="checkbox" value="57785"/> <label class="option" for="edit-og-register-57785"> <span class="og-registration-57785">
+HOCD </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31442">
+<input class="form-checkbox" id="edit-og-register-31442" name="og_register[31442]" type="checkbox" value="31442"/> <label class="option" for="edit-og-register-31442"> <span class="og-registration-31442">
+HPV </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37211">
+<input class="form-checkbox" id="edit-og-register-37211" name="og_register[37211]" type="checkbox" value="37211"/> <label class="option" for="edit-og-register-37211"> <span class="og-registration-37211">
+Hair Loss </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35227">
+<input class="form-checkbox" id="edit-og-register-35227" name="og_register[35227]" type="checkbox" value="35227"/> <label class="option" for="edit-og-register-35227"> <span class="og-registration-35227">
+Healthy Eating </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29188">
+<input class="form-checkbox" id="edit-og-register-29188" name="og_register[29188]" type="checkbox" value="29188"/> <label class="option" for="edit-og-register-29188"> <span class="og-registration-29188">
+Healthy Sex </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44606">
+<input class="form-checkbox" id="edit-og-register-44606" name="og_register[44606]" type="checkbox" value="44606"/> <label class="option" for="edit-og-register-44606"> <span class="og-registration-44606">
+Heart Attack </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29189">
+<input class="form-checkbox" id="edit-og-register-29189" name="og_register[29189]" type="checkbox" value="29189"/> <label class="option" for="edit-og-register-29189"> <span class="og-registration-29189">
+Heart Disease </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31441">
+<input class="form-checkbox" id="edit-og-register-31441" name="og_register[31441]" type="checkbox" value="31441"/> <label class="option" for="edit-og-register-31441"> <span class="og-registration-31441">
+Heartburn </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35226">
+<input class="form-checkbox" id="edit-og-register-35226" name="og_register[35226]" type="checkbox" value="35226"/> <label class="option" for="edit-og-register-35226"> <span class="og-registration-35226">
+Hepatitis C </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35209">
+<input class="form-checkbox" id="edit-og-register-35209" name="og_register[35209]" type="checkbox" value="35209"/> <label class="option" for="edit-og-register-35209"> <span class="og-registration-35209">
+Heroin </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29930">
+<input class="form-checkbox" id="edit-og-register-29930" name="og_register[29930]" type="checkbox" value="29930"/> <label class="option" for="edit-og-register-29930"> <span class="og-registration-29930">
+Herpes </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35229">
+<input class="form-checkbox" id="edit-og-register-35229" name="og_register[35229]" type="checkbox" value="35229"/> <label class="option" for="edit-og-register-35229"> <span class="og-registration-35229">
+High Blood Pressure </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44601">
+<input class="form-checkbox" id="edit-og-register-44601" name="og_register[44601]" type="checkbox" value="44601"/> <label class="option" for="edit-og-register-44601"> <span class="og-registration-44601">
+High Cholesterol </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44612">
+<input class="form-checkbox" id="edit-og-register-44612" name="og_register[44612]" type="checkbox" value="44612"/> <label class="option" for="edit-og-register-44612"> <span class="og-registration-44612">
+Hives </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44590">
+<input class="form-checkbox" id="edit-og-register-44590" name="og_register[44590]" type="checkbox" value="44590"/> <label class="option" for="edit-og-register-44590"> <span class="og-registration-44590">
+Hoarding </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29209">
+<input class="form-checkbox" id="edit-og-register-29209" name="og_register[29209]" type="checkbox" value="29209"/> <label class="option" for="edit-og-register-29209"> <span class="og-registration-29209">
+Hodgkins Lymphoma </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-47182">
+<input class="form-checkbox" id="edit-og-register-47182" name="og_register[47182]" type="checkbox" value="47182"/> <label class="option" for="edit-og-register-47182"> <span class="og-registration-47182">
+Huntingtons Disease </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44596">
+<input class="form-checkbox" id="edit-og-register-44596" name="og_register[44596]" type="checkbox" value="44596"/> <label class="option" for="edit-og-register-44596"> <span class="og-registration-44596">
+Hyperthyroidism </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44621">
+<input class="form-checkbox" id="edit-og-register-44621" name="og_register[44621]" type="checkbox" value="44621"/> <label class="option" for="edit-og-register-44621"> <span class="og-registration-44621">
+Hypothyroidism </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35230">
+<input class="form-checkbox" id="edit-og-register-35230" name="og_register[35230]" type="checkbox" value="35230"/> <label class="option" for="edit-og-register-35230"> <span class="og-registration-35230">
+Hysterectomy </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44597">
+<input class="form-checkbox" id="edit-og-register-44597" name="og_register[44597]" type="checkbox" value="44597"/> <label class="option" for="edit-og-register-44597"> <span class="og-registration-44597">
+Incest Survivors </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29190">
+<input class="form-checkbox" id="edit-og-register-29190" name="og_register[29190]" type="checkbox" value="29190"/> <label class="option" for="edit-og-register-29190"> <span class="og-registration-29190">
+Infertility </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29191">
+<input class="form-checkbox" id="edit-og-register-29191" name="og_register[29191]" type="checkbox" value="29191"/> <label class="option" for="edit-og-register-29191"> <span class="og-registration-29191">
+Infidelity </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29192">
+<input class="form-checkbox" id="edit-og-register-29192" name="og_register[29192]" type="checkbox" value="29192"/> <label class="option" for="edit-og-register-29192"> <span class="og-registration-29192">
+Insomnia </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35211">
+<input class="form-checkbox" id="edit-og-register-35211" name="og_register[35211]" type="checkbox" value="35211"/> <label class="option" for="edit-og-register-35211"> <span class="og-registration-35211">
+Internet Addiction </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35203">
+<input class="form-checkbox" id="edit-og-register-35203" name="og_register[35203]" type="checkbox" value="35203"/> <label class="option" for="edit-og-register-35203"> <span class="og-registration-35203">
+Irritable Bowel Syndrome </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35234">
+<input class="form-checkbox" id="edit-og-register-35234" name="og_register[35234]" type="checkbox" value="35234"/> <label class="option" for="edit-og-register-35234"> <span class="og-registration-35234">
+Jealousy </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35218">
+<input class="form-checkbox" id="edit-og-register-35218" name="og_register[35218]" type="checkbox" value="35218"/> <label class="option" for="edit-og-register-35218"> <span class="og-registration-35218">
+Kidney Cancer </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44615">
+<input class="form-checkbox" id="edit-og-register-44615" name="og_register[44615]" type="checkbox" value="44615"/> <label class="option" for="edit-og-register-44615"> <span class="og-registration-44615">
+Kleptomania </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37219">
+<input class="form-checkbox" id="edit-og-register-37219" name="og_register[37219]" type="checkbox" value="37219"/> <label class="option" for="edit-og-register-37219"> <span class="og-registration-37219">
+Klonopin </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-40265">
+<input class="form-checkbox" id="edit-og-register-40265" name="og_register[40265]" type="checkbox" value="40265"/> <label class="option" for="edit-og-register-40265"> <span class="og-registration-40265">
+Learning Disability </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35219">
+<input class="form-checkbox" id="edit-og-register-35219" name="og_register[35219]" type="checkbox" value="35219"/> <label class="option" for="edit-og-register-35219"> <span class="og-registration-35219">
+Liver Cancer </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29193">
+<input class="form-checkbox" id="edit-og-register-29193" name="og_register[29193]" type="checkbox" value="29193"/> <label class="option" for="edit-og-register-29193"> <span class="og-registration-29193">
+Loneliness </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29924">
+<input class="form-checkbox" id="edit-og-register-29924" name="og_register[29924]" type="checkbox" value="29924"/> <label class="option" for="edit-og-register-29924"> <span class="og-registration-29924">
+Lung Cancer </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44620">
+<input class="form-checkbox" id="edit-og-register-44620" name="og_register[44620]" type="checkbox" value="44620"/> <label class="option" for="edit-og-register-44620"> <span class="og-registration-44620">
+Lupus </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44594">
+<input class="form-checkbox" id="edit-og-register-44594" name="og_register[44594]" type="checkbox" value="44594"/> <label class="option" for="edit-og-register-44594"> <span class="og-registration-44594">
+Lyme Disease </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-59290">
+<input class="form-checkbox" id="edit-og-register-59290" name="og_register[59290]" type="checkbox" value="59290"/> <label class="option" for="edit-og-register-59290"> <span class="og-registration-59290">
+Lymphedema </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37223">
+<input class="form-checkbox" id="edit-og-register-37223" name="og_register[37223]" type="checkbox" value="37223"/> <label class="option" for="edit-og-register-37223"> <span class="og-registration-37223">
+Lyrica </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31435">
+<input class="form-checkbox" id="edit-og-register-31435" name="og_register[31435]" type="checkbox" value="31435"/> <label class="option" for="edit-og-register-31435"> <span class="og-registration-31435">
+Marijuana </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-47184">
+<input class="form-checkbox" id="edit-og-register-47184" name="og_register[47184]" type="checkbox" value="47184"/> <label class="option" for="edit-og-register-47184"> <span class="og-registration-47184">
+Medicaid </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-47183">
+<input class="form-checkbox" id="edit-og-register-47183" name="og_register[47183]" type="checkbox" value="47183"/> <label class="option" for="edit-og-register-47183"> <span class="og-registration-47183">
+Medicare </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29915">
+<input class="form-checkbox" id="edit-og-register-29915" name="og_register[29915]" type="checkbox" value="29915"/> <label class="option" for="edit-og-register-29915"> <span class="og-registration-29915">
+Menopause </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37224">
+<input class="form-checkbox" id="edit-og-register-37224" name="og_register[37224]" type="checkbox" value="37224"/> <label class="option" for="edit-og-register-37224"> <span class="og-registration-37224">
+Metformin </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35210">
+<input class="form-checkbox" id="edit-og-register-35210" name="og_register[35210]" type="checkbox" value="35210"/> <label class="option" for="edit-og-register-35210"> <span class="og-registration-35210">
+Meth </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37241">
+<input class="form-checkbox" id="edit-og-register-37241" name="og_register[37241]" type="checkbox" value="37241"/> <label class="option" for="edit-og-register-37241"> <span class="og-registration-37241">
+Methadone </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31425">
+<input class="form-checkbox" id="edit-og-register-31425" name="og_register[31425]" type="checkbox" value="31425"/> <label class="option" for="edit-og-register-31425"> <span class="og-registration-31425">
+Migraine </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31448">
+<input class="form-checkbox" id="edit-og-register-31448" name="og_register[31448]" type="checkbox" value="31448"/> <label class="option" for="edit-og-register-31448"> <span class="og-registration-31448">
+Military </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31436">
+<input class="form-checkbox" id="edit-og-register-31436" name="og_register[31436]" type="checkbox" value="31436"/> <label class="option" for="edit-og-register-31436"> <span class="og-registration-31436">
+Military Family </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29893">
+<input class="form-checkbox" id="edit-og-register-29893" name="og_register[29893]" type="checkbox" value="29893"/> <label class="option" for="edit-og-register-29893"> <span class="og-registration-29893">
+Miscarriage </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31952">
+<input class="form-checkbox" id="edit-og-register-31952" name="og_register[31952]" type="checkbox" value="31952"/> <label class="option" for="edit-og-register-31952"> <span class="og-registration-31952">
+Moms </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37225">
+<input class="form-checkbox" id="edit-og-register-37225" name="og_register[37225]" type="checkbox" value="37225"/> <label class="option" for="edit-og-register-37225"> <span class="og-registration-37225">
+Morphine </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29887">
+<input class="form-checkbox" id="edit-og-register-29887" name="og_register[29887]" type="checkbox" value="29887"/> <label class="option" for="edit-og-register-29887"> <span class="og-registration-29887">
+Multiple Sclerosis </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37226">
+<input class="form-checkbox" id="edit-og-register-37226" name="og_register[37226]" type="checkbox" value="37226"/> <label class="option" for="edit-og-register-37226"> <span class="og-registration-37226">
+Naproxen </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-52265">
+<input class="form-checkbox" id="edit-og-register-52265" name="og_register[52265]" type="checkbox" value="52265"/> <label class="option" for="edit-og-register-52265"> <span class="og-registration-52265">
+Narcissist </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44593">
+<input class="form-checkbox" id="edit-og-register-44593" name="og_register[44593]" type="checkbox" value="44593"/> <label class="option" for="edit-og-register-44593"> <span class="og-registration-44593">
+Narcolepsy </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37227">
+<input class="form-checkbox" id="edit-og-register-37227" name="og_register[37227]" type="checkbox" value="37227"/> <label class="option" for="edit-og-register-37227"> <span class="og-registration-37227">
+Neurontin </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29210">
+<input class="form-checkbox" id="edit-og-register-29210" name="og_register[29210]" type="checkbox" value="29210"/> <label class="option" for="edit-og-register-29210"> <span class="og-registration-29210">
+Non Hodgkins Lymphoma </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44613">
+<input class="form-checkbox" id="edit-og-register-44613" name="og_register[44613]" type="checkbox" value="44613"/> <label class="option" for="edit-og-register-44613"> <span class="og-registration-44613">
+Nutrition </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29194">
+<input class="form-checkbox" id="edit-og-register-29194" name="og_register[29194]" type="checkbox" value="29194"/> <label class="option" for="edit-og-register-29194"> <span class="og-registration-29194">
+OCD </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44618">
+<input class="form-checkbox" id="edit-og-register-44618" name="og_register[44618]" type="checkbox" value="44618"/> <label class="option" for="edit-og-register-44618"> <span class="og-registration-44618">
+Obesity </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31956">
+<input class="form-checkbox" id="edit-og-register-31956" name="og_register[31956]" type="checkbox" value="31956"/> <label class="option" for="edit-og-register-31956"> <span class="og-registration-31956">
+Online Dating </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35233">
+<input class="form-checkbox" id="edit-og-register-35233" name="og_register[35233]" type="checkbox" value="35233"/> <label class="option" for="edit-og-register-35233"> <span class="og-registration-35233">
+Osteoporosis </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35221">
+<input class="form-checkbox" id="edit-og-register-35221" name="og_register[35221]" type="checkbox" value="35221"/> <label class="option" for="edit-og-register-35221"> <span class="og-registration-35221">
+Ovarian Cancer </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37228">
+<input class="form-checkbox" id="edit-og-register-37228" name="og_register[37228]" type="checkbox" value="37228"/> <label class="option" for="edit-og-register-37228"> <span class="og-registration-37228">
+Oxycodone </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35206">
+<input class="form-checkbox" id="edit-og-register-35206" name="og_register[35206]" type="checkbox" value="35206"/> <label class="option" for="edit-og-register-35206"> <span class="og-registration-35206">
+PCOS </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31450">
+<input class="form-checkbox" id="edit-og-register-31450" name="og_register[31450]" type="checkbox" value="31450"/> <label class="option" for="edit-og-register-31450"> <span class="og-registration-31450">
+PMS </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29198">
+<input class="form-checkbox" id="edit-og-register-29198" name="og_register[29198]" type="checkbox" value="29198"/> <label class="option" for="edit-og-register-29198"> <span class="og-registration-29198">
+PTSD </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35222">
+<input class="form-checkbox" id="edit-og-register-35222" name="og_register[35222]" type="checkbox" value="35222"/> <label class="option" for="edit-og-register-35222"> <span class="og-registration-35222">
+Pancreatic Cancer </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29890">
+<input class="form-checkbox" id="edit-og-register-29890" name="og_register[29890]" type="checkbox" value="29890"/> <label class="option" for="edit-og-register-29890"> <span class="og-registration-29890">
+Panic Attack </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44607">
+<input class="form-checkbox" id="edit-og-register-44607" name="og_register[44607]" type="checkbox" value="44607"/> <label class="option" for="edit-og-register-44607"> <span class="og-registration-44607">
+Paranoia </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29195">
+<input class="form-checkbox" id="edit-og-register-29195" name="og_register[29195]" type="checkbox" value="29195"/> <label class="option" for="edit-og-register-29195"> <span class="og-registration-29195">
+Parents </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31439">
+<input class="form-checkbox" id="edit-og-register-31439" name="og_register[31439]" type="checkbox" value="31439"/> <label class="option" for="edit-og-register-31439"> <span class="og-registration-31439">
+Parkinsons </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37238">
+<input class="form-checkbox" id="edit-og-register-37238" name="og_register[37238]" type="checkbox" value="37238"/> <label class="option" for="edit-og-register-37238"> <span class="og-registration-37238">
+Paxil </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37243">
+<input class="form-checkbox" id="edit-og-register-37243" name="og_register[37243]" type="checkbox" value="37243"/> <label class="option" for="edit-og-register-37243"> <span class="og-registration-37243">
+Percocet </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31433">
+<input class="form-checkbox" id="edit-og-register-31433" name="og_register[31433]" type="checkbox" value="31433"/> <label class="option" for="edit-og-register-31433"> <span class="og-registration-31433">
+Personality Disorder </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37213">
+<input class="form-checkbox" id="edit-og-register-37213" name="og_register[37213]" type="checkbox" value="37213"/> <label class="option" for="edit-og-register-37213"> <span class="og-registration-37213">
+Pet Loss </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29922">
+<input class="form-checkbox" id="edit-og-register-29922" name="og_register[29922]" type="checkbox" value="29922"/> <label class="option" for="edit-og-register-29922"> <span class="og-registration-29922">
+Phobia </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44616">
+<input class="form-checkbox" id="edit-og-register-44616" name="og_register[44616]" type="checkbox" value="44616"/> <label class="option" for="edit-og-register-44616"> <span class="og-registration-44616">
+Plastic Surgery </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44605">
+<input class="form-checkbox" id="edit-og-register-44605" name="og_register[44605]" type="checkbox" value="44605"/> <label class="option" for="edit-og-register-44605"> <span class="og-registration-44605">
+Post Partum Depression </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29903">
+<input class="form-checkbox" id="edit-og-register-29903" name="og_register[29903]" type="checkbox" value="29903"/> <label class="option" for="edit-og-register-29903"> <span class="og-registration-29903">
+Pregnancy </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37214">
+<input class="form-checkbox" id="edit-og-register-37214" name="og_register[37214]" type="checkbox" value="37214"/> <label class="option" for="edit-og-register-37214"> <span class="og-registration-37214">
+Premature Ovarian Failure </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29196">
+<input class="form-checkbox" id="edit-og-register-29196" name="og_register[29196]" type="checkbox" value="29196"/> <label class="option" for="edit-og-register-29196"> <span class="og-registration-29196">
+Prescription Drug </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29197">
+<input class="form-checkbox" id="edit-og-register-29197" name="og_register[29197]" type="checkbox" value="29197"/> <label class="option" for="edit-og-register-29197"> <span class="og-registration-29197">
+Prostate Cancer </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31440">
+<input class="form-checkbox" id="edit-og-register-31440" name="og_register[31440]" type="checkbox" value="31440"/> <label class="option" for="edit-og-register-31440"> <span class="og-registration-31440">
+Psoriasis </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29907">
+<input class="form-checkbox" id="edit-og-register-29907" name="og_register[29907]" type="checkbox" value="29907"/> <label class="option" for="edit-og-register-29907"> <span class="og-registration-29907">
+Rape </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29199">
+<input class="form-checkbox" id="edit-og-register-29199" name="og_register[29199]" type="checkbox" value="29199"/> <label class="option" for="edit-og-register-29199"> <span class="og-registration-29199">
+Relationship </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-253317">
+<input class="form-checkbox" id="edit-og-register-253317" name="og_register[253317]" type="checkbox" value="253317"/> <label class="option" for="edit-og-register-253317"> <span class="og-registration-253317">
+Retirement </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35207">
+<input class="form-checkbox" id="edit-og-register-35207" name="og_register[35207]" type="checkbox" value="35207"/> <label class="option" for="edit-og-register-35207"> <span class="og-registration-35207">
+Rosacea </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29200">
+<input class="form-checkbox" id="edit-og-register-29200" name="og_register[29200]" type="checkbox" value="29200"/> <label class="option" for="edit-og-register-29200"> <span class="og-registration-29200">
+Schizophrenia </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-47193">
+<input class="form-checkbox" id="edit-og-register-47193" name="og_register[47193]" type="checkbox" value="47193"/> <label class="option" for="edit-og-register-47193"> <span class="og-registration-47193">
+Sciatica </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35228">
+<input class="form-checkbox" id="edit-og-register-35228" name="og_register[35228]" type="checkbox" value="35228"/> <label class="option" for="edit-og-register-35228"> <span class="og-registration-35228">
+Scoliosis </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-52261">
+<input class="form-checkbox" id="edit-og-register-52261" name="og_register[52261]" type="checkbox" value="52261"/> <label class="option" for="edit-og-register-52261"> <span class="og-registration-52261">
+Seasonal Affective Disorder </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29932">
+<input class="form-checkbox" id="edit-og-register-29932" name="og_register[29932]" type="checkbox" value="29932"/> <label class="option" for="edit-og-register-29932"> <span class="og-registration-29932">
+Self Esteem </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29201">
+<input class="form-checkbox" id="edit-og-register-29201" name="og_register[29201]" type="checkbox" value="29201"/> <label class="option" for="edit-og-register-29201"> <span class="og-registration-29201">
+Self Harm </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37229">
+<input class="form-checkbox" id="edit-og-register-37229" name="og_register[37229]" type="checkbox" value="37229"/> <label class="option" for="edit-og-register-37229"> <span class="og-registration-37229">
+Seroquel </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-391342">
+<input class="form-checkbox" id="edit-og-register-391342" name="og_register[391342]" type="checkbox" value="391342"/> <label class="option" for="edit-og-register-391342"> <span class="og-registration-391342">
+Server Info </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29202">
+<input class="form-checkbox" id="edit-og-register-29202" name="og_register[29202]" type="checkbox" value="29202"/> <label class="option" for="edit-og-register-29202"> <span class="og-registration-29202">
+Sex Addiction </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44617">
+<input class="form-checkbox" id="edit-og-register-44617" name="og_register[44617]" type="checkbox" value="44617"/> <label class="option" for="edit-og-register-44617"> <span class="og-registration-44617">
+Sexual Abuse </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-40268">
+<input class="form-checkbox" id="edit-og-register-40268" name="og_register[40268]" type="checkbox" value="40268"/> <label class="option" for="edit-og-register-40268"> <span class="og-registration-40268">
+Sexual Harassment </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-47192">
+<input class="form-checkbox" id="edit-og-register-47192" name="og_register[47192]" type="checkbox" value="47192"/> <label class="option" for="edit-og-register-47192"> <span class="og-registration-47192">
+Shingles </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29203">
+<input class="form-checkbox" id="edit-og-register-29203" name="og_register[29203]" type="checkbox" value="29203"/> <label class="option" for="edit-og-register-29203"> <span class="og-registration-29203">
+Shopping Addiction </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-40264">
+<input class="form-checkbox" id="edit-og-register-40264" name="og_register[40264]" type="checkbox" value="40264"/> <label class="option" for="edit-og-register-40264"> <span class="og-registration-40264">
+Shyness </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-57786">
+<input class="form-checkbox" id="edit-og-register-57786" name="og_register[57786]" type="checkbox" value="57786"/> <label class="option" for="edit-og-register-57786"> <span class="og-registration-57786">
+Siblings </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44609">
+<input class="form-checkbox" id="edit-og-register-44609" name="og_register[44609]" type="checkbox" value="44609"/> <label class="option" for="edit-og-register-44609"> <span class="og-registration-44609">
+Single Dads </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44610">
+<input class="form-checkbox" id="edit-og-register-44610" name="og_register[44610]" type="checkbox" value="44610"/> <label class="option" for="edit-og-register-44610"> <span class="og-registration-44610">
+Single Moms </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29348">
+<input class="form-checkbox" id="edit-og-register-29348" name="og_register[29348]" type="checkbox" value="29348"/> <label class="option" for="edit-og-register-29348"> <span class="og-registration-29348">
+Single Parents </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29204">
+<input class="form-checkbox" id="edit-og-register-29204" name="og_register[29204]" type="checkbox" value="29204"/> <label class="option" for="edit-og-register-29204"> <span class="og-registration-29204">
+Singles </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29928">
+<input class="form-checkbox" id="edit-og-register-29928" name="og_register[29928]" type="checkbox" value="29928"/> <label class="option" for="edit-og-register-29928"> <span class="og-registration-29928">
+Skin Cancer </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-40266">
+<input class="form-checkbox" id="edit-og-register-40266" name="og_register[40266]" type="checkbox" value="40266"/> <label class="option" for="edit-og-register-40266"> <span class="og-registration-40266">
+Skin Picking </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-47189">
+<input class="form-checkbox" id="edit-og-register-47189" name="og_register[47189]" type="checkbox" value="47189"/> <label class="option" for="edit-og-register-47189"> <span class="og-registration-47189">
+Sleep Apnea </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-52266">
+<input class="form-checkbox" id="edit-og-register-52266" name="og_register[52266]" type="checkbox" value="52266"/> <label class="option" for="edit-og-register-52266"> <span class="og-registration-52266">
+Sleep Walking </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29205">
+<input class="form-checkbox" id="edit-og-register-29205" name="og_register[29205]" type="checkbox" value="29205"/> <label class="option" for="edit-og-register-29205"> <span class="og-registration-29205">
+Smoking </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-52264">
+<input class="form-checkbox" id="edit-og-register-52264" name="og_register[52264]" type="checkbox" value="52264"/> <label class="option" for="edit-og-register-52264"> <span class="og-registration-52264">
+Social Anxiety </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-52263">
+<input class="form-checkbox" id="edit-og-register-52263" name="og_register[52263]" type="checkbox" value="52263"/> <label class="option" for="edit-og-register-52263"> <span class="og-registration-52263">
+Social Security </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-47194">
+<input class="form-checkbox" id="edit-og-register-47194" name="og_register[47194]" type="checkbox" value="47194"/> <label class="option" for="edit-og-register-47194"> <span class="og-registration-47194">
+Spina Bifida </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29206">
+<input class="form-checkbox" id="edit-og-register-29206" name="og_register[29206]" type="checkbox" value="29206"/> <label class="option" for="edit-og-register-29206"> <span class="og-registration-29206">
+Stress </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31451">
+<input class="form-checkbox" id="edit-og-register-31451" name="og_register[31451]" type="checkbox" value="31451"/> <label class="option" for="edit-og-register-31451"> <span class="og-registration-31451">
+Stroke </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44614">
+<input class="form-checkbox" id="edit-og-register-44614" name="og_register[44614]" type="checkbox" value="44614"/> <label class="option" for="edit-og-register-44614"> <span class="og-registration-44614">
+Stuttering </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37245">
+<input class="form-checkbox" id="edit-og-register-37245" name="og_register[37245]" type="checkbox" value="37245"/> <label class="option" for="edit-og-register-37245"> <span class="og-registration-37245">
+Suboxone </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44591">
+<input class="form-checkbox" id="edit-og-register-44591" name="og_register[44591]" type="checkbox" value="44591"/> <label class="option" for="edit-og-register-44591"> <span class="og-registration-44591">
+Sugar Addiction </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29207">
+<input class="form-checkbox" id="edit-og-register-29207" name="og_register[29207]" type="checkbox" value="29207"/> <label class="option" for="edit-og-register-29207"> <span class="og-registration-29207">
+Suicide </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31632">
+<input class="form-checkbox" id="edit-og-register-31632" name="og_register[31632]" type="checkbox" value="31632"/> <label class="option" for="edit-og-register-31632"> <span class="og-registration-31632">
+Surgery </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31954">
+<input class="form-checkbox" id="edit-og-register-31954" name="og_register[31954]" type="checkbox" value="31954"/> <label class="option" for="edit-og-register-31954"> <span class="og-registration-31954">
+Teen </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35223">
+<input class="form-checkbox" id="edit-og-register-35223" name="og_register[35223]" type="checkbox" value="35223"/> <label class="option" for="edit-og-register-35223"> <span class="og-registration-35223">
+Testicular Cancer </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-35224">
+<input class="form-checkbox" id="edit-og-register-35224" name="og_register[35224]" type="checkbox" value="35224"/> <label class="option" for="edit-og-register-35224"> <span class="og-registration-35224">
+Thyroid Cancer </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-47188">
+<input class="form-checkbox" id="edit-og-register-47188" name="og_register[47188]" type="checkbox" value="47188"/> <label class="option" for="edit-og-register-47188"> <span class="og-registration-47188">
+Tinnitus </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-253314">
+<input class="form-checkbox" id="edit-og-register-253314" name="og_register[253314]" type="checkbox" value="253314"/> <label class="option" for="edit-og-register-253314"> <span class="og-registration-253314">
+Transgender </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37231">
+<input class="form-checkbox" id="edit-og-register-37231" name="og_register[37231]" type="checkbox" value="37231"/> <label class="option" for="edit-og-register-37231"> <span class="og-registration-37231">
+Trazodone </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-43573">
+<input class="form-checkbox" id="edit-og-register-43573" name="og_register[43573]" type="checkbox" value="43573"/> <label class="option" for="edit-og-register-43573"> <span class="og-registration-43573">
+Trichotillomania </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44595">
+<input class="form-checkbox" id="edit-og-register-44595" name="og_register[44595]" type="checkbox" value="44595"/> <label class="option" for="edit-og-register-44595"> <span class="og-registration-44595">
+Trying To Conceive </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31082">
+<input class="form-checkbox" id="edit-og-register-31082" name="og_register[31082]" type="checkbox" value="31082"/> <label class="option" for="edit-og-register-31082"> <span class="og-registration-31082">
+Unemployment </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37232">
+<input class="form-checkbox" id="edit-og-register-37232" name="og_register[37232]" type="checkbox" value="37232"/> <label class="option" for="edit-og-register-37232"> <span class="og-registration-37232">
+Valium </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-47185">
+<input class="form-checkbox" id="edit-og-register-47185" name="og_register[47185]" type="checkbox" value="47185"/> <label class="option" for="edit-og-register-47185"> <span class="og-registration-47185">
+Vegan </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-47186">
+<input class="form-checkbox" id="edit-og-register-47186" name="og_register[47186]" type="checkbox" value="47186"/> <label class="option" for="edit-og-register-47186"> <span class="og-registration-47186">
+Vegetarian </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-52262">
+<input class="form-checkbox" id="edit-og-register-52262" name="og_register[52262]" type="checkbox" value="52262"/> <label class="option" for="edit-og-register-52262"> <span class="og-registration-52262">
+Veterans </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37246">
+<input class="form-checkbox" id="edit-og-register-37246" name="og_register[37246]" type="checkbox" value="37246"/> <label class="option" for="edit-og-register-37246"> <span class="og-registration-37246">
+Vicodin </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-44608">
+<input class="form-checkbox" id="edit-og-register-44608" name="og_register[44608]" type="checkbox" value="44608"/> <label class="option" for="edit-og-register-44608"> <span class="og-registration-44608">
+Video Game Addiction </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-29208">
+<input class="form-checkbox" id="edit-og-register-29208" name="og_register[29208]" type="checkbox" value="29208"/> <label class="option" for="edit-og-register-29208"> <span class="og-registration-29208">
+Weight Loss </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37236">
+<input class="form-checkbox" id="edit-og-register-37236" name="og_register[37236]" type="checkbox" value="37236"/> <label class="option" for="edit-og-register-37236"> <span class="og-registration-37236">
+Wellbutrin </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31985">
+<input class="form-checkbox" id="edit-og-register-31985" name="og_register[31985]" type="checkbox" value="31985"/> <label class="option" for="edit-og-register-31985"> <span class="og-registration-31985">
+Widow </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-31986">
+<input class="form-checkbox" id="edit-og-register-31986" name="og_register[31986]" type="checkbox" value="31986"/> <label class="option" for="edit-og-register-31986"> <span class="og-registration-31986">
+Widower </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37233">
+<input class="form-checkbox" id="edit-og-register-37233" name="og_register[37233]" type="checkbox" value="37233"/> <label class="option" for="edit-og-register-37233"> <span class="og-registration-37233">
+Xanax </span> </label>
+</div>
+<div class="form-item form-type-checkbox form-item-og-register-37235">
+<input class="form-checkbox" id="edit-og-register-37235" name="og_register[37235]" type="checkbox" value="37235"/> <label class="option" for="edit-og-register-37235"> <span class="og-registration-37235">
+Zoloft </span> </label>
+</div>
+</div>
+</div>
+</div><div class="form-actions form-wrapper" id="edit-actions--2"><input class="form-submit" id="edit-submit--2" name="op" type="submit" value="Save"/></div></div></div><div class="url-textfield"><div class="form-item form-type-textfield form-item-url">
+<label for="edit-url">Leave this field blank </label>
+<input autocomplete="off" class="form-text" id="edit-url" maxlength="128" name="url" size="20" type="text" value=""/>
+</div>
+</div></div></form> </div>
+</div>
+</div>
+</div>
+<div class="user_relationships_ui_popup_form" id="user_relationships_popup_form"></div> <script src="https://www.supportgroups.com/sites/default/files/js/js_Aho1aZuSCFDyYlDlyGmeWdUFuG1VQdFUVzA92-8wsOk.js" type="text/javascript"></script>
+<script src="https://www.supportgroups.com/sites/default/files/js/js_RJ3KdTMWDCOeKZ_lWa0Wbf5E6lxiz4X0IaVYU7akmsk.js" type="text/javascript"></script>
+<script src="https://www.supportgroups.com/sites/default/files/js/js_COMsmDyrY9mzVU28X2uGvF4Ba3vd5eTo5xEO7dvCUZM.js" type="text/javascript"></script>
+<script src="https://www.supportgroups.com/sites/default/files/js/js_oq92h_Ctj7BGHNdjCEwqZc8AAZAdHNPlsZElOMNW2gU.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery(document).ready(function($) { 
+	
+	$("#navigation .content > ul").mobileMenu({
+		prependTo: "#navigation",
+		combine: false,
+        switchWidth: 760,
+        topOptionText: Drupal.settings.skeletontheme['topoptiontext']
+	});
+	
+	});
+//--><!]]>
+</script>
+<script src="https://www.supportgroups.com/sites/default/files/js/js_EF2lOTk6gBGCZ2ayAz2ju41jHbEKJv7HtnZKZBc1j7w.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-8997908-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script src="https://www.supportgroups.com/sites/default/files/js/js_wdoMd2ZUi_utgsBSVqqvIzgKf_uKB6fntBlOjFGeQAo.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","skeletontheme":{"topoptiontext":"Select a page"},"ajaxPageState":{"theme":"skeletonsub","theme_token":"jRV3-cMsMpUXKhlX5S6hzItelbj33pzvW3GUm4QCU7M","js":{"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.5\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.effects.core.min.js":1,"sites\/all\/modules\/contrib\/nice_menus\/js\/jquery.bgiframe.js":1,"sites\/all\/modules\/contrib\/nice_menus\/js\/jquery.hoverIntent.js":1,"sites\/all\/modules\/contrib\/nice_menus\/js\/superfish.js":1,"sites\/all\/modules\/contrib\/nice_menus\/js\/nice_menus.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.effects.highlight.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.js":1,"sites\/all\/themes\/skeletontheme\/js\/jquery.mobilemenu.js":1,"0":1,"sites\/all\/modules\/custom\/supportgroups_feed\/js\/supportgroups-feed.js":1,"misc\/progress.js":1,"sites\/all\/modules\/custom\/supportgroups_node\/js\/supportgroups-node-group-post.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/custom\/supportgroups_default\/js\/sg-default-helpers.js":1,"sites\/all\/modules\/custom\/supportgroups_user\/js\/register.js":1,"sites\/all\/modules\/custom\/supportgroups_user\/js\/jquery.validate.min.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/poll\/poll.css":1,"sites\/all\/modules\/contrib\/quiz\/quiz.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/youtube\/css\/youtube.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/custom\/supportgroups_feed\/css\/supportgroups-feed.css":1,"sites\/all\/modules\/custom\/supportgroups_node\/css\/supportgroups-node-group-post.css":1,"sites\/all\/modules\/contrib\/nice_menus\/css\/nice_menus.css":1,"sites\/all\/modules\/contrib\/nice_menus\/css\/nice_menus_default.css":1,"sites\/default\/files\/honeypot\/honeypot.css":1,"sites\/all\/modules\/custom\/supportgroups_user\/css\/register.css":1,"sites\/all\/themes\/skeletonsub\/css\/skeleton.css":1,"sites\/all\/themes\/skeletonsub\/css\/style.css":1,"sites\/all\/themes\/skeletonsub\/css\/buttons.css":1,"sites\/all\/themes\/skeletontheme\/css\/layout.css":1,"sites\/all\/themes\/skeletontheme\/color\/colors.css":1,"sites\/all\/themes\/skeletonsub\/css\/colors.css":1}},"currentUser":{"uid":0,"hostname":"34.215.69.55","roles":{"1":"anonymous user"},"cache":0},"supportgroups_node":{"group_post":{"form":"","selector":"group-post-node-form"}},"nice_menus_options":{"delay":"800","speed":"slow"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"supportgroups_default":{"userinfo":{"uid":0,"running":0,"preferences":false}},"urlIsAjaxTrusted":{"\/ptsd\/it-happened-again-i-went-back-in-time-because-of-my-friends?destination=node\/160394":true,"\/ptsd\/it-happened-again-i-went-back-in-time-because-of-my-friends":true},"ogContext":{"groupType":"node","gid":"29198"}});
+//--><!]]>
+</script>
+<script type="text/javascript">
+    var _qevents = _qevents || [];
+    
+    (function() {
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+    })();
+    
+    _qevents.push({
+    qacct:"p-15e4OSeaAUAF6"
+    });
+    </script>
+<noscript>
+<div style="display:none;">
+<img alt="Quantcast" border="0" height="1" src="//pixel.quantserve.com/pixel/p-15e4OSeaAUAF6.gif" width="1"/>
+</div>
+</noscript>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/eqcss/1.7.0/EQCSS.min.js" type="text/javascript"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f1b17c3973","applicationID":"24780533","transactionName":"NlRQYxZUV0UEABYIDQ8ec1QQXFZYSg0NBQc+QVNQAWpPXwAU","queueTime":0,"applicationTime":858,"atts":"GhNTFV5OREs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
