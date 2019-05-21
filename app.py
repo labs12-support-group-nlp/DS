@@ -1,20 +1,42 @@
-from flask import Flask, request, jsonify
-from .predict import clean
+import spacy
+from flask import Flask, request
+from sklearn.externals import joblib
 
 
 app = Flask(__name__)
-
-@app.route('/', methods=['POST','OPTIONS'])
-def getText():
-    text = request.get_json(force=True)
-    return jsonify({'received': res_text,
-                    "about":"Hey there!",
-                    "group1": "Emotional issues support group",
-                    "group2": "Mental issues support group",
-                    "group3": "Mood issues support group",
-                    "group4": "Depression issues support group",
-                    "group5": "All kind of issues support group"})
+nlp = spacy.load("en_vectors_web_lg")
 
 
-# @app.route('/predict', methods=['GET'])
-# def predict():
+def clean(text):
+    # split text by white space
+    text = text.split()
+    text = ' '.join(text)
+    # lower case
+    text = text.lower()
+    # lemmatize
+    text = nlp(text)
+    text = [token.lemma_ for token in text if len(token.lemma_) > 1]
+    return text
+
+
+@app.route('/')
+def index():
+    return 'Support Groups Finder!'
+
+
+@app.route('/predict', methods=['GET'])
+def predict():
+    body = request.get_data()
+    header = request.headers
+    text = request.args['text']
+    text = clean(text)
+    filename = 'sg_model.pkl' # get from https://drive.google.com/file/d/1Cp3FkjwgPweynK1n6qPH2Rj1kEmYfLa0/view?usp=sharing
+    m1 = joblib.load(open(filename, 'rb'))
+    prediction = m1.predict(text)[0]
+    mapping = {0: 'offmychest', 1: 'ADD', 2: 'cripplingalcoholism',
+               3: 'leaves', 4: 'MenGetRapedToo', 5: 'rapecounseling',
+               6: 'addiction', 7: 'ADHD', 8: 'Advice', 9: 'afterthesilence',
+               10: 'Agoraphobia', 11: 'AlAnon', 12: 'alcoholicsanonymous',
+               13: 'alcoholism', 14: 'Anger', 15: 'Antipsychiatry',
+               16: 'Anxiety', 17: 'Anxietyhelp', 18: 'anxietysuccess'}
+    return mapping[prediction]
