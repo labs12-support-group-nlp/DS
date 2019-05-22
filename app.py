@@ -1,5 +1,5 @@
 import spacy
-from flask import Flask, request
+from flask import Flask, render_template, request
 from sklearn.externals import joblib
 
 
@@ -21,7 +21,7 @@ def clean(text):
 
 @app.route('/')
 def index():
-    return 'Support Groups Finder!'
+    return render_template('base.html')
 
 
 @app.route('/predict', methods=['GET'])
@@ -30,7 +30,7 @@ def predict():
     header = request.headers
     text = request.args['text']
     text = clean(text)
-    filename = 'sg_model.pkl' # get from https://drive.google.com/file/d/1Cp3FkjwgPweynK1n6qPH2Rj1kEmYfLa0/view?usp=sharing
+    filename = 'sg_model.pkl'  # get from https://drive.google.com/file/d/1Cp3FkjwgPweynK1n6qPH2Rj1kEmYfLa0/view?usp=sharing
     m1 = joblib.load(open(filename, 'rb'))
     prediction = m1.predict(text)[0]
     mapping = {0: 'offmychest', 1: 'ADD', 2: 'cripplingalcoholism',
