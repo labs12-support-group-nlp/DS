@@ -1,3 +1,4 @@
+import pandas as pd
 import spacy
 from flask import Flask, render_template, request
 from sklearn.externals import joblib
@@ -31,12 +32,12 @@ def predict():
     text = request.args['text']
     text = clean(text)
     filename = 'sg_model.pkl'  # get from https://drive.google.com/file/d/1Cp3FkjwgPweynK1n6qPH2Rj1kEmYfLa0/view?usp=sharing
-    m1 = joblib.load(open(filename, 'rb'))
-    prediction = m1.predict(text)[0]
+    model = joblib.load(open(filename, 'rb'))
+    output = pd.DataFrame(model.predict_proba(text), columns=model.classes_).T.nlargest(5, [0]).reset_index().values
     mapping = {0: 'offmychest', 1: 'ADD', 2: 'cripplingalcoholism',
                3: 'leaves', 4: 'MenGetRapedToo', 5: 'rapecounseling',
                6: 'addiction', 7: 'ADHD', 8: 'Advice', 9: 'afterthesilence',
                10: 'Agoraphobia', 11: 'AlAnon', 12: 'alcoholicsanonymous',
                13: 'alcoholism', 14: 'Anger', 15: 'Antipsychiatry',
                16: 'Anxiety', 17: 'Anxietyhelp', 18: 'anxietysuccess'}
-    return mapping[prediction]
+    return mapping[output]
