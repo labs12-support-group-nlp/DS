@@ -9,10 +9,10 @@
         <h1>Support Groups Finder</h1>
 
         {% block content %}
-        <!-- <form action="/predict" method="post">
-            <input type="text" name="user_name" placeholder="User to add">
-            <input type="submit" value="Add User"
-        </form> -->
+        <form action="/predict" method="get">
+            <input type="text" name="text" placeholder="What's on your mind?">
+            <input type="submit" value="Find support groups"
+        </form>
         {% endblock %}
     </body>
 </html>
