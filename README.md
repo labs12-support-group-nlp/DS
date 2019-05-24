@@ -31,10 +31,6 @@ Find Support recomends support groups, that users may be interested in, based on
 To access the webpage, you can go to [Support Finder](https://nlpsupportgroupsfinder.firebaseapp.com/).
 We do not connect to other services through APIs.
 
-## How to connect to the data API
-
-
-
 ## Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
